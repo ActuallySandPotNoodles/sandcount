@@ -86,7 +86,7 @@ class Ui_Form(object):
         self.lcdNumber.display(self.counter)
     def saver(self):
         self.savc = self.savc + 1
-        self.textset = f'{self.textset}Saved Resalt #{self.savc}: {self.counter}\n'
+        self.textset = f'{self.textset}Saved Result #{self.savc}: {self.counter}\n'
         self.plainTextEdit.setPlainText(self.textset)
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate

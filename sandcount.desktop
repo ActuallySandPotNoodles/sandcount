@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+
+Name=SandDice
+Exec=/usr/bin/sandcount
+Icon=/usr/share/sandpotnoodles/sandcount.png
+
+Comment=A counter app in the eyemint design language
+
+Categories=Utility
+Keywords=mintmix;sandpotnoodles;counter;count;qt6

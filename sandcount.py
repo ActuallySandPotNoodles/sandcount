@@ -19,7 +19,7 @@ class Ui_Form(object):
         Form.setMinimumSize(QtCore.QSize(828, 409))
         Form.setMaximumSize(QtCore.QSize(828, 409))
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("/home/sand/Downloads/sanddice(1).png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon.addPixmap(QtGui.QPixmap("/usr/share/sandpotnoodles/sandcount.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         Form.setWindowIcon(icon)
         Form.setStyleSheet("background-color: qlineargradient(spread:pad, x1:0.547935, y1:0, x2:0.564, y2:1, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(76, 76, 76, 255));\n"
 "color: rgb(255, 255, 255);")

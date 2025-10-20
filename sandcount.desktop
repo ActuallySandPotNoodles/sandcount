@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Application
 
-Name=SandDice
+Name=SandCount
 Exec=/usr/bin/sandcount
 Icon=/usr/share/sandpotnoodles/sandcount.png
 

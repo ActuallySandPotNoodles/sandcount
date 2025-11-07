@@ -3,7 +3,7 @@ if [[ $EUID -ne 0 ]]; then
    echo "This script must be run as root"
    exit 1
 fi
-echo "Starting Install Of 'sandcount'..."
+echo "Starting Install Of 'sandcount 1.1'..."
 echo "Downloading Stuff..."
 mkdir -p /usr/share/sandpotnoodles
 wget https://raw.githubusercontent.com/ActuallySandPotNoodles/sandcount/refs/heads/main/hRR-xr4W.png -O /usr/share/sandpotnoodles/sandcount.png

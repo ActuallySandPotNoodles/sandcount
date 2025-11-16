@@ -13,6 +13,9 @@ class Ui_Form(object):
     counter = 0
     savc = 0
     textset = ""
+    restoreto = 67
+    canrestore = False
+    counter2 = 0
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.resize(828, 409)
@@ -64,13 +67,30 @@ class Ui_Form(object):
         self.reset.setObjectName("reset")
         self.plainTextEdit = QtWidgets.QPlainTextEdit(parent=Form)
         self.plainTextEdit.setGeometry(QtCore.QRect(10, 250, 541, 141))
+        #67
         self.plainTextEdit.setStyleSheet("border-color: rgb(255, 255, 255);")
         self.plainTextEdit.setReadOnly(True)
         self.plainTextEdit.setObjectName("plainTextEdit")
+        self.restore = QtWidgets.QPushButton(parent=Form)
+        self.restore.setGeometry(QtCore.QRect(440, 30, 111, 41))
+        self.restore.setCheckable(False)
+        self.restore.setAutoDefault(False)
+        self.restore.setDefault(False)
+        self.restore.setFlat(False)
+        self.restore.setObjectName("restore")
+        self.restore_2 = QtWidgets.QPushButton(parent=Form)
+        self.restore_2.setGeometry(QtCore.QRect(330, 30, 111, 41))
+        self.restore_2.setCheckable(False)
+        self.restore_2.setAutoDefault(False)
+        self.restore_2.setDefault(False)
+        self.restore_2.setFlat(False)
+        self.restore_2.setObjectName("restore_2")
         self.up.clicked.connect(self.goup)
         self.down.clicked.connect(self.godown)
         self.reset.clicked.connect(self.reseter)
         self.pushButton_3.clicked.connect(self.saver)
+        self.restore.clicked.connect(self.restorer)
+        self.restore_2.clicked.connect(self.clear)
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
@@ -82,19 +102,32 @@ class Ui_Form(object):
         self.counter = self.counter-1
         self.lcdNumber.display(self.counter)
     def reseter(self):
+        self.canrestore = True
+        self.restoreto = self.counter
         self.counter = 0
         self.lcdNumber.display(self.counter)
     def saver(self):
         self.savc = self.savc + 1
         self.textset = f'{self.textset}Saved Result #{self.savc}: {self.counter}\n'
         self.plainTextEdit.setPlainText(self.textset)
+    def restorer(self):
+        if self.canrestore:
+            self.counter2 = self.counter
+            self.counter = self.restoreto
+            self.restoreto = self.counter2
+            self.lcdNumber.display(self.counter)
+    def clear(self):
+        self.textset = ''
+        self.plainTextEdit.setPlainText(self.textset)
+
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "SandCount"))
         self.label.setText(_translate("Form", "SandCount"))
         self.pushButton_3.setText(_translate("Form", "Save"))
+        self.restore.setText(_translate("Form", "Restore"))
         self.reset.setText(_translate("Form", "Reset"))
-
+        self.restore_2.setText(_translate("Form", "Clear History"))
 
 if __name__ == "__main__":
     import sys
